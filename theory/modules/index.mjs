@@ -1,12 +1,16 @@
+// Named Import
 import {
+  outputPara,
   num1Input,
   num2Input,
-  outputPara,
   addBtn,
   subtractBtn,
   multiplyBtn,
   divideBtn
 } from "./elements.mjs";
+
+// Default Import
+import modulus from "./elements.mjs";
 
 import { add, subtract, multiply, divide } from "./calc.mjs";
 
