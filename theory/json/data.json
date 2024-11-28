@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Ram",
+    "roll": 10,
+    "address": { "city": "Surat", "pin": 123456 },
+    "hobbies": ["singing", "painting"]
+  },
+  {
+    "name": "Lakshman",
+    "roll": 11,
+    "address": { "city": "Surat", "pin": 123456 },
+    "hobbies": ["singing", "painting"]
+  }
+]
