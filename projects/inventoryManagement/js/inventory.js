@@ -10,6 +10,12 @@ function renderInventory() {
             <div class="product-card">
                 <div class="product-img">
                     <img src="${product.img}" alt="${product.name}" />
+                    <button class="edit-btn" onclick="handleEdit(${
+                      product.id
+                    })"><i class="fa-solid fa-pen-to-square"></i></button>
+                    <button class="delete-btn" onclick="handleDelete(${
+                      product.id
+                    })"><i class="fa-solid fa-trash"></i></button>
                 </div>
                 <div class="product-desc">
                     <div class="product-title-price">
@@ -73,4 +79,33 @@ function handleSell(id) {
   renderInventory();
 }
 
+function handleDelete(id) {
+  const inventory = JSON.parse(localStorage.getItem("inventory")) || [];
+  const updatedInventory = inventory.filter(function (product, index, array) {
+    if (product.id === id) {
+      return false;
+    }
+    return true;
+  });
+  localStorage.setItem("inventory", JSON.stringify(updatedInventory));
+  renderInventory();
+}
+
+function handleEdit(id) {
+  console.log("Edit");
+  window.navigation.navigate(
+    `http://127.0.0.1:5501/projects/inventoryManagement/addUpdateForm.html?id=${id}`
+  );
+}
+
 renderInventory();
+
+// handle del btn click
+// get product id
+// delete that product form local storage
+// re-render the list
+
+// handle edit click
+// load add update inventory form
+// fill the form with product details
+// store the updated product in local storage

@@ -14,6 +14,7 @@
   height: 275px;
   width: auto;
   overflow: hidden;
+  position: relative;
 }
 
 .product-img img {
@@ -50,4 +51,26 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.delete-btn,
+.edit-btn {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 10px;
+  right: 10px;
+  height: 16px;
+}
+
+.edit-btn {
+  right: 62px;
+  background-color: #1e88e5;
+  color: white;
+}
+
+.delete-btn {
+  background-color: #e53935;
+  color: white;
 }
