@@ -1,4 +1,4 @@
-function storeToLocalStorage(product) {
+function addToLocalStorage(product) {
   let inventory = JSON.parse(localStorage.getItem("inventory"));
 
   if (!inventory) {
@@ -36,7 +36,7 @@ function handleSubmit(event) {
 
   const product = {};
 
-  product.id = id || Date.now();
+  product.id = Number(id) || Date.now();
   product.img = event.target["img"].value;
   product.name = event.target["name"].value;
   product.desc = event.target["desc"].value;
@@ -46,7 +46,7 @@ function handleSubmit(event) {
   if (id) {
     updateToLocalStorage(product);
   } else {
-    storeToLocalStorage(product);
+    addToLocalStorage(product);
   }
 
   alert("Added Successfully!");

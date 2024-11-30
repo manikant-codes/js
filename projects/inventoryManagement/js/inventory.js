@@ -92,8 +92,7 @@ function handleDelete(id) {
 }
 
 function handleEdit(id) {
-  console.log("Edit");
-  window.navigation.navigate(
+  navigation.navigate(
     `http://127.0.0.1:5501/projects/inventoryManagement/addUpdateForm.html?id=${id}`
   );
 }
