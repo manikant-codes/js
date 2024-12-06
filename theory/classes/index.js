@@ -1,112 +1,134 @@
-// const stud1 = {
-//   name: "Ram",
-//   roll: 1,
-//   std: 10,
-//   city: "Surat",
-//   div: "A",
-//   engMarks: 45,
-//   gujMarks: 47,
-//   avg: function () {
-//     (this.engMarks + this.gujMarks) / 2;
-//   },
+// const student1 = {
+//   fname: "Hitendra",
+//   lname: "Goud",
+//   rollNo: 1,
+//   age: 10,
+//   school: "Jivan Jyot",
+//   getFullName: function () {
+//     return this.fname + " " + this.lname;
+//   }
 // };
 
-// const stud2 = {
-//   name: "Lakshman",
-//   roll: 2,
-//   std: 10,
-//   city: "Surat",
-//   div: "A",
-//   engMarks: 43,
-//   gujMarks: 49,
-//   avg: function () {
-//     (this.engMarks + this.gujMarks) / 2;
-//   },
+// const student2 = {
+//   fname: "Vivek",
+//   lname: "Rajput",
+//   rollNo: 2,
+//   age: 9,
+//   school: "Jivan Jyot",
+//   getFullName: function () {
+//     return this.fname + " " + this.lname;
+//   }
 // };
 
-// const stud3 = {
-//   name: "Maruti",
-//   roll: 3,
-//   std: 10,
-//   city: "Surat",
-//   div: "A",
-//   engMarks: 49,
-//   gujMarks: 41,
-//   avg: function () {
-//     (this.engMarks + this.gujMarks) / 2;
-//   },
+// const student3 = {
+//   fname: "Akshay",
+//   lname: "Rathore",
+//   rollNo: 3,
+//   age: 11,
+//   school: "Jivan Jyot",
+//   getFullName: function () {
+//     return this.fname + " " + this.lname;
+//   }
 // };
+
+// Factory for making objects.
+// function Student(fname, lname, rollNo, age) {
+//   this.fname = fname;
+//   this.lname = lname;
+//   this.rollNo = rollNo;
+//   this.age = age;
+//   // this.school = "Jivan Jyot";
+//   // this.getFullName = function () {
+//   //   return this.fname + "-" + this.lname;
+//   // };
+// }
+
+// Student.prototype.school = "Jivan Jyot";
+// Student.prototype.getFullName = function () {
+//   return this.fname + " " + this.lname;
+// };
+
+// const student1 = new Student("Hitendra", "Goud", 1, 10);
+// const student2 = new Student("Vivek", "Rajput", 2, 9);
+
+// console.log("student1", student1);
+// console.log("student2", student2);
+
+// function Student(fname, lname, rollNo, age) {
+//   this.fname = fname;
+//   this.lname = lname;
+//   this.rollNo = rollNo;
+//   this.age = age;
+//   // this.school = "Jivan Jyot";
+//   // this.getFullName = function () {
+//   //   return this.fname + "-" + this.lname;
+//   // };
+// }
 
 // class Student {
-//   constructor(name, roll, engMarks, gujMarks, mathMarks) {
-//     this.name = name;
-//     this.roll = roll;
-//     this.mathMarks = mathMarks;
-//     this.std = 10;
-//     this.div = "A";
-//     this.engMarks = engMarks;
-//     this.gujMarks = gujMarks;
+//   constructor(fname, lname, rollNo, age) {
+//     this.fname = fname;
+//     this.lname = lname;
+//     this.rollNo = rollNo;
+//     this.age = age;
+//     // this.school = "Jivan Jyot";
+//     // this.getFullName = function () {
+//     //   return this.fname + " " + this.lname;
+//     // };
 //   }
 
-//   getAvg() {
-//     return ((this.gujMarks + this.engMarks + this.mathMarks) / 3).toFixed(2);
+//   getFullName() {
+//     return this.fname + " " + this.lname;
 //   }
 // }
 
-// Student.prototype.city = "Surat";
+// Student.prototype.school = "Jivan Jyot";
 
-// const stud4 = new Student("Sia", 15, 56, 66, 45);
-// const stud5 = new Student("Radha", 16, 57, 62, 66);
+// const student1 = new Student("Hitendra", "Goud", 1, 10);
+// const student2 = new Student("Vivek", "Rajput", 2, 9);
 
-// console.log(stud4);
-// console.log(stud5);
+// console.log("student1", student1);
+// console.log("student2", student2);
 
 class Animal {
-  constructor(height, weight, limbs) {
-    this.height = height;
+  constructor(name, age, weight) {
+    this.name = name;
+    this.age = age;
     this.weight = weight;
-    this.limbs = limbs;
   }
 
-  walk() {
-    console.log("Walking");
+  move() {
+    console.log("Is moving.");
   }
+
   eat() {
-    console.log("Eating");
-  }
-  sleep() {
-    console.log("Sleeping");
+    console.log("Is eating.");
   }
 }
 
-class Cat extends Animal {
-  static getGenus() {
-    return "Felis";
-  }
-  constructor(furColor, sound, tailLength, weight, height, limbs) {
-    super(height, weight, limbs);
-    this.furColor = furColor;
-    this.sound = sound;
-    this.tailLength = tailLength;
+class Deer extends Animal {
+  constructor(name, age, weight, color) {
+    super(name, age, weight);
+    this.color = color;
   }
 
-  hunt() {
-    console.log("Hunting for rats!");
+  fight() {
+    console.log("Is fighting.");
   }
 }
 
-class Human extends Animal {
-  constructor(religion, caste, bankBalance) {
-    this.religion = religion;
-    this.caste = caste;
-    this.bankBalance = bankBalance;
+class Tiger extends Animal {
+  constructor(name, age, weight, stripes) {
+    this.stripes = stripes;
   }
 
-  work() {
-    console.log("Working");
+  swim() {
+    console.log("Is swimming.");
   }
 }
 
-const cat = new Cat("Orange", "Meow", "0.5m", "8kg", "1m", 4);
+const deer1 = new Deer("Vivek", 4, 10, "Brown");
+const deer2 = new Deer("Akshay", 2, 8, "Beige");
 
-console.log(Cat.getGenus());
+console.log("deer1", deer1);
+console.log("deer2", deer2);
