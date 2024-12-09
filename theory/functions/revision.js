@@ -1,43 +1,50 @@
-// debugger;
+// DRY Don't Repeat Yourself
 
-// function add(a, b) {
-//   console.log(a + b);
+// console.log(2 - 2);
+// console.log(4 - 8);
+// console.log(6 - 3);
+
+// function declaration
+// function calc(num1, num2) {
+//   console.log(num1 / num2);
 // }
 
-// const add = function (a, b) {
-//   console.log(a + b);
+// function assignment
+// const calc = function (num1, num2) {
+//   console.log(num1 / num2);
 // };
 
-// const add = new Function("a", "b", "console.log(a + b)");
+// arrow function
+// const calc = (num1, num2) => {
+//   return num1 / num2;
+// };
 
-// add(4, 2);
-// add(4, 4);
-// add(5, 10);
+// console.log(num2); // Error
 
-// function hello(name) {
-//   console.log("Hello, " + name);
-// }
-// console.log(hello("Ram"));
+// function call/invocation
+// calc(2, 4);
+// calc(4, 8);
+// calc(6, 2);
 
-// (function hello(name) {
-//   console.log("Hello, " + name);
-// })("Ram");
-
-function add(...args) {
-  console.log("args", args);
-
-  let sum = 0;
-
-  for (const value of args) {
-    sum = sum + value;
+const student1 = {
+  fname: "Hitendra",
+  lname: "Rajput",
+  getFullName: function (like1, like2, like3) {
+    console.log(
+      `My name is ${this.fname} ${this.lname}. I like ${like1}, ${like2} and ${like3}.`
+    );
   }
+};
 
-  return sum;
-  // if (typeof a === "number" && typeof b === "number") {
-  //   return a + b;
-  // } else {
-  //   alert("Please provide numbers!");
-  // }
-}
+const student2 = {
+  fname: "Akshay",
+  lname: "Rathore"
+};
 
-console.log(add(4, 5, 3, 4, 5, 12));
+student1.getFullName("travelling", "cars", "bikes");
+
+// student1.getFullName.call(student2, "eating", "pizza", "pasta");
+// student1.getFullName.apply(student2, ["eating", "pizza", "pasta"]);
+
+const newGetFullName = student1.getFullName.bind(student2);
+newGetFullName("eating", "pizza", "pasta");
