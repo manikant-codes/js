@@ -35,11 +35,11 @@
 // function Student(fname, lname, rollNo, age) {
 //   this.fname = fname;
 //   this.lname = lname;
-//   this.rollNo = rollNo;
+//   this.roll = rollNo;
 //   this.age = age;
 //   // this.school = "Jivan Jyot";
 //   // this.getFullName = function () {
-//   //   return this.fname + "-" + this.lname;
+//   //   return this.fname + " " + this.lname;
 //   // };
 // }
 
@@ -83,6 +83,9 @@
 // }
 
 // Student.prototype.school = "Jivan Jyot";
+// Student.prototype.getFullName = function () {
+//   return this.fname + " " + this.lname;
+// };
 
 // const student1 = new Student("Hitendra", "Goud", 1, 10);
 // const student2 = new Student("Vivek", "Rajput", 2, 9);
@@ -107,6 +110,7 @@ class Animal {
 }
 
 class Deer extends Animal {
+  static zooName = "Surat Zoo";
   constructor(name, age, weight, color) {
     super(name, age, weight);
     this.color = color;
