@@ -1,0 +1,53 @@
+.grid-item {
+  min-height: 200px;
+  /* width: 200px; */
+}
+
+.grid-item:nth-child(1) {
+  background-color: #ffd1dc;
+} /* Pastel Pink */
+
+.grid-item:nth-child(2) {
+  background-color: #aec6cf;
+  /* grid-column: 2 / 5; */
+  grid-column: 2 / span 3;
+} /* Pastel Blue */
+
+.grid-item:nth-child(3) {
+  background-color: #77dd77;
+  grid-column: 5 / 7;
+} /* Pastel Green */
+
+.grid-item:nth-child(4) {
+  background-color: #fdfd96;
+  grid-column: 1 / span 1;
+  grid-row: 2 / span 3;
+} /* Pastel Yellow */
+
+.grid-item:nth-child(5) {
+  background-color: #cbaacb;
+  grid-column: 2 / span 5;
+  grid-row: 2 / span 3;
+} /* Pastel Purple */
+
+.grid-item:nth-child(6) {
+  background-color: #ffb347;
+} /* Pastel Orange */
+
+.grid-item:nth-child(7) {
+  background-color: #ffb7b2;
+} /* Pastel Coral */
+
+.grid-item:nth-child(8) {
+  background-color: #b39eb5;
+} /* Pastel Lavender */
+
+.grid-item:nth-child(9) {
+  background-color: #c0c0b6;
+} /* Pastel Gray */
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 16px;
+}
