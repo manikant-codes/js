@@ -12,7 +12,8 @@
 //   p.style.backgroundColor = "red";
 // }
 
-const anchorTag = document.getElementById("mylink");
-anchorTag.href = "/theory/dom/contact.html";
+// const anchorTag = document.getElementById("mylink");
+// anchorTag.href = "/theory/dom/contact.html";
+// console.log("anchorTag", anchorTag);
 
-console.log("anchorTag", anchorTag);
+
