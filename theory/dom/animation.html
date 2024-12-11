@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Animation</title>
+    <style>
+      #parent {
+        width: 400px;
+        height: 400px;
+        background-color: #ce93d8;
+        position: relative;
+      }
+
+      #child {
+        width: 50px;
+        height: 50px;
+        background-color: #7b1fa2;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="parent">
+      <div id="child"></div>
+    </div>
+    <button onclick="startAnimation()">Animate</button>
+    <script src="./animation.js"></script>
+  </body>
+</html>
