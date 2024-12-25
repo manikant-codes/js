@@ -1,19 +1,15 @@
-const title = document.getElementById("title");
-// title.style.color = "red";
+// const title = document.getElementById("my-title");
+// const title = document.querySelector("#my-title");
+// console.log(title);
+
+// const paras = document.getElementsByClassName("my-para");
+// const para = document.querySelector(".my-para");
+// const paras = document.querySelectorAll("p.my-para");
+// console.log(para);
+// console.log(paras);
 
 // const paras = document.getElementsByTagName("p");
-// for (const element of paras) {
-//   element.style.color = "green";
-//   //   element.className = "green";
-//   //   element.classList.add("green");
-//   //   element.classList.add("pink");
-//   //   element.id = "newid";
-// }
-
-// const myparas = document.getElementsByClassName("mypara");
-// for (const element of myparas) {
-//   element.style.color = "blue";
-// }
-
-title.className = "mytitle";
-title.setAttribute("class", "mytitle");
+// const para = document.querySelector("p");
+// const paras = document.querySelectorAll("p");
+// console.log(para);
+// console.log(paras);
