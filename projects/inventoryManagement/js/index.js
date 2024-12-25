@@ -1,25 +1,44 @@
-const myCanvas = document.getElementById("myChart");
+const myCanvas = document.getElementById("myCanvas");
 const yearSelect = document.getElementById("year");
 const monthSelect = document.getElementById("month");
 const inventory = JSON.parse(localStorage.getItem("inventory")) || [];
 const orders = JSON.parse(localStorage.getItem("orders")) || [];
 
+(function renderYears() {
+  let firstOrderDate =
+    localStorage.getItem("firstOrderDate") || new Date().toISOString();
+
+  firstOrderDate = new Date(firstOrderDate);
+
+  const firstOrderYear = firstOrderDate.getFullYear();
+
+  let html = "";
+
+  for (let i = firstOrderYear; i <= new Date().getFullYear(); i++) {
+    html += `<option value="${i}">${i}</option>`;
+  }
+
+  yearSelect.innerHTML = html;
+})();
+
 let myChart;
 
 function renderChart(orders) {
-  const labels = inventory.map((value) => {
-    return value.name;
+  const labels = inventory.map((inventoryItem) => {
+    return inventoryItem.name;
   });
 
-  const temp = {};
+  const soldItemsAndQty = {};
 
-  for (const item of orders) {
-    if (temp[item.name]) {
-      temp[item.name]++;
+  for (const order of orders) {
+    if (soldItemsAndQty[order.name]) {
+      soldItemsAndQty[order.name]++;
     } else {
-      temp[item.name] = 1;
+      soldItemsAndQty[order.name] = 1;
     }
   }
+
+  const soldQtys = Object.values(soldItemsAndQty);
 
   myChart = new Chart(myCanvas, {
     type: "bar",
@@ -28,7 +47,7 @@ function renderChart(orders) {
       datasets: [
         {
           label: "# of Votes",
-          data: Object.values(temp),
+          data: soldQtys,
           borderWidth: 1
         }
       ]
@@ -42,21 +61,6 @@ function renderChart(orders) {
     }
   });
 }
-
-(function renderYears() {
-  let firstOrderDate = localStorage.getItem("firstOrderDate") || "";
-  firstOrderDate = new Date(firstOrderDate);
-
-  const firstYear = firstOrderDate.getFullYear();
-
-  let html = "";
-
-  for (let i = firstYear; i <= new Date().getFullYear(); i++) {
-    html += `<option value="${i}">${i}</option>`;
-  }
-
-  yearSelect.innerHTML = html;
-})();
 
 function filterOrders() {
   const selectedYear = Number(yearSelect.value);
@@ -74,6 +78,7 @@ function filterOrders() {
     }
     return false;
   });
+
   myChart.destroy();
   renderChart(filterdOrders);
 }
