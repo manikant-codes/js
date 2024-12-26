@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom Animation</title>
+    <style>
+      #outer-box {
+        width: 400px;
+        height: 400px;
+        background-color: #ffeb3b;
+        position: relative;
+      }
+
+      #inner-box {
+        width: 50px;
+        height: 50px;
+        background-color: #d500f9;
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="outer-box">
+      <div id="inner-box"></div>
+    </div>
+    <button onclick="startAnimation()">Start Animation</button>
+    <script src="./index.js"></script>
+  </body>
+</html>
