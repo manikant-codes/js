@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom Events</title>
+    <style>
+      #outer-div {
+        background-color: yellow;
+        height: 400px;
+        width: 400px;
+        position: relative;
+      }
+      #inner-div {
+        background-color: blueviolet;
+        height: 50px;
+        width: 50px;
+        position: absolute;
+      }
+    </style>
+  </head>
+  <!-- <body onload="alert('Body loaded.')"> -->
+  <body>
+    <!-- <button onclick="doSomething(event)">Click Me</button> -->
+    <!-- <button id="mybtn">Click Me</button> -->
+    <!-- <input type="text" onchange="handleInput(event)" /> -->
+    <!-- <input type="text" oninput="handleInput(event)" /> -->
+    <!-- <p id="output"></p> -->
+    <!-- <div id="outer-div"> -->
+    <!-- <div
+        id="inner-div"
+        onmouseover="handleMouseOver(event)"
+        onmouseout="handleMouseOut(event)"
+      ></div> -->
+    <!-- <div
+        id="inner-div"
+        onmousedown="handleMouseDown(event)"
+        onmouseup="handleMouseUp(event)"
+      ></div> -->
+    <!-- </div> -->
+
+    <input onkeydown="handleKeyDown(event)" type="number" />
+    <script src="./index.js"></script>
+  </body>
+</html>
